@@ -82,9 +82,10 @@ namespace Fungus
 
                 if (sd != null)
                 {
+                    string nameText = sd.SpeakingCharacter == null ? sd.NameText : "<color=#" + ColorUtility.ToHtmlStringRGBA( sd.SpeakingCharacter.NameColor ) + ">" + sd.NameText + "</color>";
                     NarrativeLogEntry entry = new NarrativeLogEntry()
                     {
-                        name = sd.NameText,
+                        name = nameText,
                         text = sd.StoryText
                     };
                     AddLine(entry);
