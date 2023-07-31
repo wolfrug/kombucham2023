@@ -36,28 +36,7 @@ namespace Fungus {
             eventDispatcher.Raise (new DragExited.DragExitedEvent (this, other));
         }
 
-        protected virtual void DetectDragCompleted () {
-            // Obtain the current mouse position.
-            PointerEventData eventData = new PointerEventData (EventSystem.current);
-            eventData.position = Input.mousePosition;
-            List<RaycastResult> raycastResults = new List<RaycastResult> ();
-            EventSystem.current.RaycastAll (eventData, raycastResults);
-            Debug.Log ("Detected end drag");
-            var eventDispatcher = FungusManager.Instance.EventDispatcher;
-            foreach (RaycastResult result in raycastResults) {
-                if (result.gameObject.GetComponent<Collider2D> () != null) {
-                    Debug.Log ("Detected collider 2d on " + result.gameObject.name);
-                    for (int i = 0; i < dragCompletedHandlers.Count; i++) {
-                        var handler = dragCompletedHandlers[i];
-                        Debug.Log ("Checking a drag completed handler " + handler);
-                        if (handler != null && handler.DraggableObjects.Contains (this)) {
-                            Debug.Log ("Raising an event");
-                            eventDispatcher.Raise (new DragCompleted.DragCompletedEvent (this));
-                        }
-                    }
-                }
-            }
-        }
+   
 
         protected override void DoBeginDrag () {
             // Offset the object so that the drag is anchored to the exact point where the user clicked it
@@ -118,22 +97,22 @@ namespace Fungus {
             foreach (RaycastResult result in raycastResults) {
                 Collider2D hitCollider = result.gameObject.GetComponent<Collider2D> ();
                 if (hitCollider != null) {
-                    Debug.Log ("Detected collider 2d on " + result.gameObject.name);
+                    Debug.Log ("Detected collider 2d on " + result.gameObject.transform.parent.parent.parent.name);
                     for (int i = 0; i < dragCompletedHandlers.Count; i++) {
                         DragCompletedCanvasEventhandler handler = dragCompletedHandlers[i] as DragCompletedCanvasEventhandler;
                         Debug.Log ("Checking a drag completed handler " + handler);
-                        if (handler != null && handler.GetTargetColliders ().Contains (hitCollider) && handler.DraggableObjects.Contains (this)) {
+                        if (handler != null && (handler.GetTargetColliders ().Contains (hitCollider) || handler.dragTargetTagRefs.Contains(hitCollider.tag)) && (handler.DraggableObjects.Contains (this) || handler.dragTargetTagRefs.Contains(tag))) {
                             Debug.Log ("Raising an event");
                             dragCompleted = true;
                             handler.IsOverTarget ();
-                            handler.SetTargetCollider (result.gameObject.GetComponent<Collider2D> ());
+                            handler.SetTargetCollider (hitCollider);
                             eventDispatcher.Raise (new DragCompleted.DragCompletedEvent (this));
-                            break;
+                            //break;
                         }
                     }
                 }
                 if (dragCompleted) { // only check the first hit
-                    break;
+                    //break;
                 }
             }
             if (!dragCompleted) {

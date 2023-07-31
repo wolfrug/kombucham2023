@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613269191028155610, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1613269191028155610, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 1613269191028155610, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1188159296367185490}
     - target: {fileID: 1613269191028155611, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: commandList.Array.size
       value: 19
@@ -246,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 1613269192489158188, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 93a83cd6a196200479045a997c61806d, type: 2}
     - target: {fileID: 1625645676332064660, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
       propertyPath: indentLevel
       value: 2
@@ -263,7 +263,9 @@ PrefabInstance:
       propertyPath: indentLevel
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7745767594136153515, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
+    - {fileID: 529316672604922623, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e6651db558dc5340b593aee57b0c3bf, type: 3}
 --- !u!114 &1094609595627474884 stripped
 MonoBehaviour:
@@ -414,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 68
+  itemId: 70
   indentLevel: 1
 --- !u!114 &1899446656
 MonoBehaviour:
@@ -428,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 67
+  itemId: 71
   indentLevel: 1
 --- !u!114 &1899446657
 MonoBehaviour:
@@ -442,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 66
+  itemId: 72
   indentLevel: 1
   anyOrAllConditions: 0
   conditions:
@@ -685,9 +687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 69
+  itemId: 73
   indentLevel: 2
-  messageTarget: 0
+  messageTarget: 1
   _message:
     stringRef: {fileID: 0}
     stringVal: FastEnemy

@@ -11,6 +11,8 @@ namespace Fungus {
     [ExecuteInEditMode]
     public class DragCompletedCanvasEventhandler : DragCompleted {
 
+        public List<string> draggableTagRef = default;
+        public List<string> dragTargetTagRefs = default;
         public override bool IsOverTarget () {
             overTarget = true;
             return overTarget;

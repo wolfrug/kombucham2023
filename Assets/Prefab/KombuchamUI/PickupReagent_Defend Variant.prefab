@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 519170056371551822, guid: 4c47856bd10dfad4ababae8afb63b4f3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f4409ea5a02e6240ac65f1387161b3e, type: 3}
+      objectReference: {fileID: 21300000, guid: b2e595d0fc41ded48b0df84be6d5bfe6, type: 3}
     - target: {fileID: 519170056371551829, guid: 4c47856bd10dfad4ababae8afb63b4f3, type: 3}
       propertyPath: value
       value: IngDefend_Add

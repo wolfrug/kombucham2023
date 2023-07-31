@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 519170056371551822, guid: 4c47856bd10dfad4ababae8afb63b4f3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8c2398ac9903ce947962f027f1bdcfd0, type: 3}
+      objectReference: {fileID: 21300000, guid: 333a069eceafef14d87fb92b5ce6ba91, type: 3}
     - target: {fileID: 519170056371551829, guid: 4c47856bd10dfad4ababae8afb63b4f3, type: 3}
       propertyPath: value
       value: IngBind_Add

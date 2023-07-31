@@ -9,6 +9,10 @@ TagManager:
   - IngAttack
   - IngDefend
   - IngBind
+  - ItemAttack
+  - ItemDefend
+  - ItemBind
+  - ItemPower
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,8 @@ TagManager:
   - UI
   - Interactables
   - Ground
-  - 
-  - 
+  - Shield
+  - Shield2
   - 
   - 
   - 
