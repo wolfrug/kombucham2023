@@ -11,13 +11,16 @@ using UnityEngine;
     "Does the collection contain the given variable (works as an If command)\nWarning: does NOT work with Else If (for obvious reasons)")]
 [AddComponentMenu ("")]
 public class CollectionContainsIf : CollectionBaseVarCommand {
-
+    public BooleanData DoesNotContain = new BooleanData (false);
     public override void OnEnter () {
         OnEnterInner ();
     }
     protected override void OnEnterInner () {
-
         bool condition = collection.Value.Contains (variableToUse);
+        if (DoesNotContain) {
+            condition = !condition;
+        }
+
         //Debug.Log ("Condition is: " + condition.ToString ());
         if (condition) {
             OnTrue ();
@@ -89,7 +92,11 @@ public class CollectionContainsIf : CollectionBaseVarCommand {
         } else if (variableToUse == null) {
             return "No variable set!";
         } else {
-            return "If " + collection.collectionRef.Key + " contains " + variableToUse.Key;
+            if (DoesNotContain) {
+                return "If " + collection.collectionRef.Key + "does not contain " + variableToUse.Key;
+            } else {
+                return "If " + collection.collectionRef.Key + " contains " + variableToUse.Key;
+            }
         }
     }
 
